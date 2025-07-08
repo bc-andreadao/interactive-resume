@@ -19,7 +19,7 @@ export function MultiActionAreaCard( {company}: Props) {
     const samples = sampleData.find( (item) => item.company === company)?.samples || [];
 
   return (
-    <section className="grid grid-cols-2 gap-4">
+    <section className="flex items-start justify-center gap-7 bg-gray-100 p-10 m-8 w-full h-screen rounded-lg shadow-lg">
         {samples.map( (sample, i) => (
             <Card sx={{ maxWidth: 345 }} key={i}>
             <CardActionArea>
@@ -39,11 +39,8 @@ export function MultiActionAreaCard( {company}: Props) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary" component={Link} href={sample.link}>
-                Learn more
-                </Button>
-                <Button size="small" color="primary" component={Link} href={sample.link} scroll={false}>
-                View PDF
+                <Button size="small" color="primary" component={Link} href={`/samples/${sample.filename}`} scroll={false}>
+                    Learn more
                 </Button>
             </CardActions>
             </Card>            

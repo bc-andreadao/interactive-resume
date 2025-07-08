@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
-
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import { Roboto } from 'next/font/google';
@@ -33,9 +30,7 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <div className="w-[85%] mx-auto">
-              <Header />
               {children}
-              <Footer />
             </div>
           </ThemeProvider>
         </AppRouterCacheProvider>
