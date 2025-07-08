@@ -9,15 +9,10 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardActions from '@mui/material/CardActions';
 
 
-import sampleData from "@/src/data/sampleData";
+import samples from "@/src/sampleData";
 
-type Props = {
-  company: string
-};
-
-export function MultiActionAreaCard( {company}: Props) {
-    const samples = sampleData.find( (item) => item.company === company)?.samples || [];
-
+export function MultiActionAreaCard() {
+ 
   return (
     <section className="flex items-start justify-center gap-7 bg-gray-100 p-10 m-8 w-full h-screen rounded-lg shadow-lg">
         {samples.map( (sample, i) => (
@@ -26,8 +21,8 @@ export function MultiActionAreaCard( {company}: Props) {
                 <CardMedia
                 component="img"
                 height="140"
-                image="/assets/flower-background.jpg"
-                alt="green iguana"
+                image="/flower-background.jpg"
+                alt="sample image"
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
